@@ -60,8 +60,8 @@ This project was developed and tested on the following environment:
 
 1. Clone the repository  
     ```bash
-    git clone https://github.com/your_username/your_repo.git
-    cd your_repo
+    git clone https://github.com/IshiguroN/ros2-docker-lazyvim.git
+    cd ros2-docker-lazyvim
     ```
 
 2. Build the Docker image
