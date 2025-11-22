@@ -207,6 +207,18 @@ This project was developed and tested on the following environment:
 - ROS2 build artifacts (`build/`, `install/`, `log/`) are ignored via `.gitignore`.  
 - Additional tools can be added in the Dockerfile to make the environment reproducible.
 
+- **GPU Usage**: The current `docker-compose.yml` is configured for NVIDIA GPU passthrough.  
+  If your machine does not have an NVIDIA GPU and you want to run on CPU, comment out the following section in `docker-compose.yml`:
+
+```yaml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - driver: nvidia
+          count: 1
+          capabilities: [gpu]
+```
 
 ## License
 
