@@ -1,0 +1,21 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# VSCode
+.vscode/
+
+# SSH keys
+.ssh/
+
+# cache
+.cache
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker garbage
+*.pid
+

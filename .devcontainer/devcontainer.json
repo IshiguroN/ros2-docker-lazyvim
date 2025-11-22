@@ -1,0 +1,27 @@
+{
+  "name": "Turtlebot3 Gazebo simulation with ROS2",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "turtlebot3-container",
+  "workspaceFolder": "/turtlebot3_ws",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-themes",
+        "twxs.cmake",
+        "eamodio.gitlens",
+        "ranch-hand-robotics.rde-ros-2"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "editor.formatOnSave": true,
+        "python.analysis.autoImportCompletions": true
+      }
+    }
+  }
+  // "postCreateCommand": "rosdep update && rosdep install --from-paths src -y || true",
+}

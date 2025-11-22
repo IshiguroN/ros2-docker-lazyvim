@@ -1,0 +1,32 @@
+services:
+  turtlebot3-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: turtlebot3_simulator
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    # SHM (ROS2 の DDS 最適化)
+    ipc: host
+
+    environment:
+      - DISPLAY=$DISPLAY
+      - PULSE_SERVER=$PULSE_SERVER
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+
+    volumes:
+      - ./:/turtlebot3_ws/
+      - /dev/shm:/dev/shm
+      - /mnt/wslg:/mnt/wslg
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+    tty: true
